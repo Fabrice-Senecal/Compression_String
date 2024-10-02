@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1UjSWHvDStsV6BIg7TZV8/o+YJb2qy+L7ll8NusSBNEtwa1HpcsbNdW2xqMGIoerBLCwcXOIRBupW6phbTGL0A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\fabou\\Desktop\\Documents\\cegep\\Prog 3 Structure\\TP3\\Algorithme_Compression\\TP3\\TP3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fabou\\.nuget\\packages\\stylecop.analyzers\\1.1.118\\stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
+  "logs": []
+}

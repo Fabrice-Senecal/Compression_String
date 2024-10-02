@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TP3</name>
+    </assembly>
+    <members>
+        <member name="T:TP3.Algorithme_1">
+            <summary>
+            classe contenant les méthodes et instances
+            nécessaire pour la compression des données.
+            </summary>
+        </member>
+        <member name="M:TP3.Algorithme_1.CompressionComplete(System.String)">
+            <summary>
+            centralise les méthodes utilisée pour la compression de donnée.
+            </summary>
+            <param name="messageACompresser">string à comprésser en bits.</param>
+            <returns>La string compréssé.</returns>
+        </member>
+        <member name="M:TP3.Algorithme_1.DecompresseMessage(System.String)">
+            <summary>
+            Parcour l'arbre binaire fait par le systeme d'encodage en se dirigeant
+            soit à gauche si le bit est de 0 ou a droite si le bit est 1. Enfin, si le
+            noeud actuel est une feuille, la lettre est ajouté a un string builder. La
+            méthode boucle au travers de chaque bits du message compréssé.
+            </summary>
+            <param name="messageCompresse">string de bits à décompresser.</param>
+            <returns>Une string su message décompressé.</returns>
+        </member>
+        <member name="M:TP3.Algorithme_1.CalculeFrequence(System.String)">
+            <summary>
+            Calcule la fréquence d'apparition de chaque caractère sur le total en utilisant un dictionnaire.
+            si le caractère est présent la fréquence est incrémenté sinon le caractère est ajouté avec une fréquence de un.
+            Enfin, la méthode boucle au travers de chaque KeyValuePair pour calculer le pourcentage
+            d'apparition et insérer le caractère et la donné dans le dictionnaire <see cref="F:TP3.Algorithme_1.pourcentage"/>.
+            </summary>
+            <param name="messageACompress">string à comprésser en bits.</param>
+        </member>
+        <member name="M:TP3.Algorithme_1.FaireEncodage">
+            <summary>
+            Méthode invoquant la fonction récursive pour faire l'encodage.
+            </summary>
+        </member>
+        <member name="M:TP3.Algorithme_1.FaireEncodageRecursif(TP3.Node,System.String)">
+            <summary>
+            Méthode récursive qui créer le <see cref="F:TP3.Algorithme_1.dictionnaireDeCode"/> en
+            prenant en compte le positionnement des noeuds pour faire l'encodage de chaque caractères.
+            </summary>
+            <param name="root">le noeud actuellement traiter.</param>
+            <param name="caractereEncode">string builder qui créer la string du caractère une fois encodé.</param>
+        </member>
+        <member name="M:TP3.Algorithme_1.CompresseMessage(System.String)">
+            <summary>
+            Méthode faisant la compression complète du message selon le <see cref="F:TP3.Algorithme_1.dictionnaireDeCode"/> qui lui
+            contien la traductions en bits de chaque caractère utilisé dans le message à compresser.
+            </summary>
+            <param name="messageACompress">message à compresser.</param>
+            <returns>une string du message convertis en bits.</returns>
+        </member>
+        <member name="T:TP3.Algorithme_2">
+            <summary>
+            Classe pour implémenter l'algorithme de Dijkstra afin de trouver le plus court chemin dans un graphe.
+            </summary>
+        </member>
+        <member name="M:TP3.Algorithme_2.Dijkstra(System.Int32[0:,0:],System.Int32)">
+            <summary>
+            Fonction qui implémente l'algorithme de plus court chemin à partir d'une source de Dijkstra pour un graphe représenté par une matrice d'adjacence.
+            </summary>
+            <param name="graph">La matrice représentant le graphe.</param>
+            <param name="src">Le noeud source.</param>
+        </member>
+        <member name="M:TP3.Algorithme_2.MinDistance(System.Int32[],System.Boolean[])">
+            <summary>
+            Fonction pour trouver le noeud avec la distance minimale, parmi les noeuds
+            n'ayant pas encore été procédées.
+            </summary>
+            <param name="dist">Tableau représentant les distances depuis le noeud source.</param>
+            <param name="sptSet">Tableau indiquant si un noeud à été procédée.</param>
+            <returns>L'index du noeud avec la distance minimale.</returns>
+        </member>
+        <member name="M:TP3.Algorithme_2.PrintSolution(System.Int32[],System.Int32)">
+            <summary>
+            Affiche le tableau des distances des noeuds par rapport a la source.
+            </summary>
+            <param name="dist">Tableau représentant les distances depuis le noeud source.</param>
+            <param name="n">Nombre de noeuds.</param>
+        </member>
+        <member name="T:TP3.Node">
+            <summary>
+            Classe qui contiens les propriétées nécessaire 
+            pour instancier un noeud dans l'arbre.
+            </summary>
+        </member>
+        <member name="M:TP3.Node.#ctor(System.Char,System.Double)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:TP3.Node"/>.
+            </summary>
+            <param name="lettre">lettre assignée au noeud.</param>
+            <param name="pourcentage">Pourcentage de la fréquence d'apparition de la lettre.</param>
+        </member>
+        <member name="P:TP3.Node.Caractere">
+            <summary>
+            Char représentant le caractère assignée au noeud.
+            </summary>
+        </member>
+        <member name="P:TP3.Node.Pourcentage">
+            <summary>
+            Double représentant le pourcentage de la fréquence d'apparition de la lettre.
+            </summary>
+        </member>
+        <member name="P:TP3.Node.Left">
+            <summary>
+            Obtien et set Le noeud positionné a gauche une fois le noeud actuel instancié.
+            </summary>
+        </member>
+        <member name="P:TP3.Node.Right">
+            <summary>
+            Obtien et set le noeud positionné a droite une fois le noeud actuel instancié.
+            </summary>
+        </member>
+        <member name="T:TP3.Program">
+            <summary>
+            Classe exécutant le programme. Elle contiens
+            donc les tests du code de l'algorithme 1.
+            </summary>
+        </member>
+        <member name="T:TP3.SystemeDEncodage">
+            <summary>
+            Contient les méthodes pour création de l'arbre binaire utilisé pour la compression de données.
+            </summary>
+        </member>
+        <member name="M:TP3.SystemeDEncodage.ConstruireArbre(System.Collections.Generic.Dictionary{System.Char,System.Double})">
+            <summary>
+            Construit l'arbre binnaire des feuilles vers la racine tout en s'assurant
+            de lordre des noeuds dans la queu pour la construction optimale de l'arbre.
+            </summary>
+            <param name="pourcentages"> Dictionnaire contenant les pourcentages des fréquences d'apparition des lettres.</param>
+            <returns>la racine de l'arbre binaire.</returns>
+        </member>
+        <member name="M:TP3.SystemeDEncodage.TrieQueue(System.Collections.Generic.Queue{TP3.Node})">
+            <summary>
+            Méthode qui créer une liste à partir de la queue pour ensuite
+            trier les données à partir de la méthode de trie récursive et les
+            réinsère dans la queue.
+            </summary>
+            <param name="p_queueOrdonne">queue contenant les noeuuds restant à polacer dans l'arbre.</param>
+        </member>
+        <member name="M:TP3.SystemeDEncodage.TrieQueueRecrursif(System.Collections.Generic.List{TP3.Node})">
+            <summary>
+            Méthode récursive faisant le trie de la liste en trouvant l'index
+            du noeud avec le plus petit pourcentage, Ensuite le noeud touvé est
+            échangé avec le noeud se trouvant à l'index 0. pour finir la méthode
+            est réinvoqué en passant la liste modifié en sautant la première donné.
+            </summary>
+            <param name="listeAOrdonner">Liste créer pour ordonner les noeuds qu'elle contient.</param>
+            <returns>Une nouvelle liste avec les noeuds mit en ordre du plus petit au plus grand.</returns>
+        </member>
+        <member name="M:TP3.SystemeDEncodage.TrouverPlusPetitIndex(System.Collections.Generic.List{TP3.Node})">
+            <summary>
+            Trouve l'index du noeud contenant le plus petit pourcentage.
+            </summary>
+            <param name="listeAOrdonner">liste de donnée à mettre en ordre.</param>
+            <returns>l'index du noeud contenant le plus petit pourcentage.</returns>
+        </member>
+    </members>
+</doc>
